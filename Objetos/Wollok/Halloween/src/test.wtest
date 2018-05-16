@@ -1,0 +1,50 @@
+import example.*
+
+describe "Azucena" {
+	test " le gustan los disfraces con ternura > 8" {
+		
+		//setup
+		const habitante = azucena
+		const disfraz = disfrazCustom
+		disfraz.ternura(9)
+		
+		//test
+		const r = habitante.leGusta(disfraz)
+		
+		//aserciones
+		assert.that(r)
+	
+	}
+	
+	test " le gustan los disfraces con ternura > 8 PRO" {
+		
+		const disfrazTierno = disfrazCustom
+		disfrazTierno.ternura(9)
+		
+		assert.that(azucena.leGusta(disfrazTierno))
+	}
+	
+	test " NO le gustan los disfraces con ternura < 8" {
+		
+		const disfrazNOTierno = disfrazCustom
+		disfrazNOTierno.ternura(1)
+		
+		assert.that(!azucena.leGusta(disfrazNOTierno))
+	}
+	
+	test " da la ternura del disfraz en caramelos si le gusta el disfraz" {
+		
+		const disfrazTierno = disfrazCustom 
+		disfrazTierno.ternura(19)
+		
+		assert.that(azucena.cantidadDeCaramelos(disfrazTierno, casa) == disfrazTierno.ternura())
+	}
+	
+	test " da 5 caramelos si NO le gusta el disfraz" {
+		
+		const disfrazNOTierno = disfrazCustom 
+		disfrazNOTierno.ternura(1)
+		
+		assert.that(azucena.cantidadDeCaramelos(disfrazNOTierno, casa) == 5)
+	}
+}
