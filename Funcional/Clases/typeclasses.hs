@@ -23,7 +23,28 @@ instance BasicEq Color where
     isEqual Green Green = True
     isEqual _     _     = False 
 
+data Micro = Micro {
+    nombre :: String
+}
 
 
 
-    
+m1 = Micro "pepe"
+m2 = Micro "pepe"
+
+
+
+
+
+
+
+Ansiosa
+masUno x = x + 1
+   masUno (2*3)
+     masUno 6 
+       6 + 1
+         7
+
+
+
+
